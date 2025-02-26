@@ -1,4 +1,4 @@
-package com.practice.leetcode.hashTable;
+package com.practice.leetcode.hot_100.hashTable;
 
 import java.util.HashMap;
 import java.util.Map;

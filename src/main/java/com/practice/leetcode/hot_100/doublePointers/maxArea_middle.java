@@ -1,4 +1,4 @@
-package com.practice.leetcode.doublePointers;
+package com.practice.leetcode.hot_100.doublePointers;
 
 /**
  * @author SSTDL
