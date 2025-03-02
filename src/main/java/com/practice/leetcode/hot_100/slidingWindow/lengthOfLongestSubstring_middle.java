@@ -16,7 +16,7 @@ public class lengthOfLongestSubstring_middle {
 
     // 滑动窗口解法-AC
     // 从每一个字符开始，不包含重复字符的最长子串
-    // 左指针：起始位置，右指针：窗口终止位置
+    // 左指针：窗口起始位置，右指针：窗口终止位置
     public static int lengthOfLongestSubstring(String s) {
         Set<Character> set = new HashSet<>();
         int max = 0;
