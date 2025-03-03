@@ -1,13 +1,23 @@
-package com.practice.leetcode.hot_100.subString;
+package com.sstdl.leetcode.hot_100.subString;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author SSTDL
- * @description
+ * @description 560. 和为 K 的子数组
+ * 给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。
+ * 子数组是数组中元素的连续非空序列。
+ *
+ * 示例 1：
+ * 输入：nums = [1,1,1], k = 2
+ * 输出：2
+ *
+ * 示例 2：
+ * 输入：nums = [1,2,3], k = 3
+ * 输出：2
  */
-public class subarraySum_middle {
+public class subarraySum_middle_560 {
     public static void main(String[] args) {
         int[] nums = {1,2,3,4,5};
         int k = 3;
@@ -15,11 +25,11 @@ public class subarraySum_middle {
         System.out.println(i);
     }
 
+    // 用哈希表记录每个前缀和出现的次数-AC
     public static int subarraySum(int[] nums, int k) {
         int[] prefixSum = new int[nums.length + 1];
         prefixSum[0] = 0;
         int count = 0;
-        // 用哈希表记录每个前缀和出现的次数
         Map<Integer, Integer> countMap = new HashMap<>();
         // 初始化
         countMap.put(0, 1);
@@ -37,6 +47,7 @@ public class subarraySum_middle {
         return count;
     }
 
+    // 直接使用前缀和-AC
 //    public static int subarraySum(int[] nums, int k) {
 //        int[] sum = new int[nums.length + 1];
 //        sum[0] = 0;
