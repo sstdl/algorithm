@@ -24,8 +24,8 @@ public class addTwoNumbers_middle_2 {
     public static void main(String[] args) {
         int[] nums1 = {2,4,3};
         int[] nums2 = {5,6,4};
-        ListNode l1 = createListNode(nums1);
-        ListNode l2 = createListNode(nums2);
+        ListNode l1 = ListNodeUtils.createListNode(nums1);
+        ListNode l2 = ListNodeUtils.createListNode(nums2);
         ListNode listNode = addTwoNumbers(l1, l2);
         while (listNode != null) {
             System.out.print(listNode.val + " ");
@@ -154,33 +154,4 @@ public class addTwoNumbers_middle_2 {
 //        }
 //        return head;
 //    }
-
-    public static ListNode createListNode(int[] nums) {
-        if (nums == null || nums.length == 0) return null;
-        ListNode head = new ListNode(nums[0]);
-        ListNode cur = head;
-        for (int i = 1; i < nums.length; i++) {
-            cur.next = new ListNode(nums[i]);
-            cur = cur.next;
-        }
-        return head;
-    }
-
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

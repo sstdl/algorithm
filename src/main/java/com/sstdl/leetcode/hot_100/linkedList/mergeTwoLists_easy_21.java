@@ -21,8 +21,8 @@ public class mergeTwoLists_easy_21 {
     public static void main(String[] args) {
         int[] nums1 = {1,2,4};
         int[] nums2 = {1,3,4};
-        ListNode list1 = createListNode(nums1);
-        ListNode list2 = createListNode(nums2);
+        ListNode list1 = ListNodeUtils.createListNode(nums1);
+        ListNode list2 = ListNodeUtils.createListNode(nums2);
         ListNode listNode = mergeTwoLists(list1, list2);
         while (listNode != null) {
             System.out.print(listNode.val + " ");
@@ -63,33 +63,5 @@ public class mergeTwoLists_easy_21 {
         // 处理剩余的链表部分，由于链表是有序的，剩余部分直接拼接到 cur.next 即可
         cur.next = list1 == null ? list2 : list1;
         return head;
-    }
-
-    public static ListNode createListNode(int[] nums) {
-        if (nums == null || nums.length == 0) return null;
-        ListNode head = new ListNode(nums[0]);
-        ListNode cur = head;
-        for (int i = 1; i < nums.length; i++) {
-            cur.next = new ListNode(nums[i]);
-            cur = cur.next;
-        }
-        return head;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 }

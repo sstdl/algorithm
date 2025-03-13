@@ -28,7 +28,7 @@ package com.sstdl.leetcode.hot_100.linkedList;
 public class hasCycle_easy_141 {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4, 5};
-        ListNode listNode = createLinkedList(nums);
+        ListNode listNode = ListNodeUtils.createListNode(nums);
         while (listNode != null) {
             System.out.print(listNode.val + " ");
             listNode = listNode.next;
@@ -47,33 +47,5 @@ public class hasCycle_easy_141 {
             if (fast == slow) return true;
         }
         return false;
-    }
-
-    public static ListNode createLinkedList(int[] nums) {
-        if (nums == null || nums.length == 0) return null;
-        ListNode head = new ListNode(nums[0]);
-        ListNode cur = head;
-        for (int i = 1; i < nums.length; i++) {
-            cur.next = new ListNode(nums[i]);
-            cur = cur.next;
-        }
-        return head;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 }

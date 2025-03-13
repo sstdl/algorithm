@@ -68,13 +68,4 @@ public class getIntersectionNode_easy_160 {
         }
         return tempA;
     }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 }

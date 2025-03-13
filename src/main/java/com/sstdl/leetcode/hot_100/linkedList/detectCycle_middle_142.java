@@ -28,7 +28,7 @@ public class detectCycle_middle_142 {
     public static void main(String[] args) {
         int[] nums = {3, 2, 0, -4};
         int pos = 1;
-        ListNode head = createListNode(nums, pos);
+        ListNode head = ListNodeUtils.createListNode(nums);
         ListNode cycleStart = detectCycle(head);
         System.out.println("Cycle starts at node with value: " + (cycleStart != null ? cycleStart.val : "No cycle"));
     }
@@ -63,41 +63,6 @@ public class detectCycle_middle_142 {
             }
         }
         return null;
-    }
-
-    public static ListNode createListNode(int[] nums, int pos) {
-        ListNode head = new ListNode(nums[pos]);
-        ListNode cur = head;
-        ListNode cyclePos = null;
-        for (int i = 1; i < nums.length; i++) {
-            cur.next = new ListNode(nums[i]);
-            cur = cur.next;
-            // 记录环的起始点
-            if (i == pos) {
-                cyclePos = cur;
-            }
-        }
-        if (pos != -1) {
-            cur.next = cyclePos;
-        }
-        return head;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 }
 
