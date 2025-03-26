@@ -16,5 +16,22 @@ package com.sstdl.leetcode.hot_100.binaryTree;
  * 解释：[1,null,3] 和 [3,1] 都是高度平衡二叉搜索树。
  */
 public class sortedArrayToBST_easy_108 {
+    public TreeNode sortedArrayToBST(int[] nums) {
+        int len = nums.length;
+        if (len == 0) return null;
+        return BinaryTree(nums, 0, len - 1);
+    }
 
+    // 递归法-AC（手撕）
+    public TreeNode BinaryTree(int[] nums, int left, int right) {
+        // 递归终止条件
+        if (left > right) return null;
+        int mid = left + (right - left) / 2;
+        // 将中间节点作为根节点
+        TreeNode root = new TreeNode(nums[mid]);
+        // 依次递归
+        root.left = BinaryTree(nums, left, mid - 1);
+        root.right = BinaryTree(nums, mid + 1, right);
+        return root;
+    }
 }
